@@ -33,4 +33,4 @@ Issues = "https://github.com/UlrichVestuche/IMC-Prosperity-3/issues"
 Changelog = "https://github.com/UlrichVestuche/IMC-Prosperity-3/releases"
 
 [tool.setuptools.packages.find]
-include = ["imc_prosperity_3", "imc_prosperity_3.*"]  # Update package naming as appropriate
+include = ["prosperity3submit", "prosperity3submit.*"]  # Update package naming as appropriate
