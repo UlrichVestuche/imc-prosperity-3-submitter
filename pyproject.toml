@@ -25,12 +25,12 @@ dependencies = [
 ]
 
 [project.scripts]
-prosperity2submit = "prosperity2submit.__main__:main"
+imc-prosperity-3 = "imc_prosperity_3.__main__:main"  # Script entry point; adjust module/package names accordingly
 
 [project.urls]
-Repository = "https://github.com/jmerle/imc-prosperity-2-submitter"
-Issues = "https://github.com/jmerle/imc-prosperity-2-submitter/issues"
-Changelog = "https://github.com/jmerle/imc-prosperity-2-submitter/releases"
+Repository = "https://github.com/UlrichVestuche/IMC-Prosperity-3"
+Issues = "https://github.com/UlrichVestuche/IMC-Prosperity-3/issues"
+Changelog = "https://github.com/UlrichVestuche/IMC-Prosperity-3/releases"
 
 [tool.setuptools.packages.find]
-include = ["prosperity2submit", "prosperity2submit.*"]
+include = ["imc_prosperity_3", "imc_prosperity_3.*"]  # Update package naming as appropriate
