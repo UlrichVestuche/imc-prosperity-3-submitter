@@ -17,14 +17,14 @@ try:
 except ImportError:
     pass
 
-KEYRING_SERVICE = "prosperity2submit"
+KEYRING_SERVICE = "prosperity3submit"
 KEYRING_USERNAME = "prosperity-id-token"
 
 API_BASE_URL = "https://bz97lt8b1e.execute-api.eu-west-1.amazonaws.com/prod"
 
 def refresh_token() -> None:
     print("""
-prosperity2submit needs your Prosperity ID token to make authenticated requests to Prosperity's internal API.
+prosperity3submit needs your Prosperity ID token to make authenticated requests to Prosperity's internal API.
 Your token is stored in the local storage item with the `CognitoIdentityServiceProvider.<some id>.<email>.idToken` key on the Prosperity website.
 You can inspect the local storage items of a website by having the website open in the active tab, pressing F12 to open the browser's developer tools, and going to the Application (Chrome) or Storage (Firefox) tab.
 From there, click on Local Storage in the sidebar and select the website that appears underneath the sidebar entry.
