@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [project.scripts]
-prosperity3submit = "prosperity3submit.main:main"  # Script entry point; adjust module/package names accordingly
+prosperity3submit = "prosperity3submit.__main__:main"  # Script entry point; adjust module/package names accordingly
 
 [project.urls]
 Repository = "https://github.com/UlrichVestuche/IMC-Prosperity-3"
