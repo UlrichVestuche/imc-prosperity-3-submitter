@@ -192,7 +192,8 @@ def submit(algorithm_file: Path, output_file: Optional[Path], open_visualizer: b
 
         if data["status"] == "FINISHED":
             log_profit_loss(output_file)
-
+    import os
+    print("Current working directory:", os.getcwd())
     if open_visualizer:
         if data["status"] == "ERROR":
             print("Submission errored, not opening visualizer")
