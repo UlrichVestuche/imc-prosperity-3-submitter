@@ -125,16 +125,23 @@ def monitor_status(round: str, algorithm_file: Path) -> dict[str, Any]:
     return data
 
 def download_logs(data: dict[str, Any], output_file: Path) -> None:
-    print(f"Downloading submission logs to {format_path(output_file)}")
+    try:
+        print(f"Downloading submission logs to {format_path(output_file)}")
 
-    url_response = request_with_token("GET", f"{API_BASE_URL}/submission/logs/{data['id']}")
+        # Get the URL for the logs using a token-authenticated request
+        url_response = request_with_token("GET", f"{API_BASE_URL}/submission/logs/{data['id']}")
+        download_url = url_response.json()
 
-    download_response = requests.get(url_response.json())
-    download_response.raise_for_status()
+        # Attempt to download the file from the URL
+        download_response = requests.get(download_url)
+        download_response.raise_for_status()
 
-    output_file.parent.mkdir(parents=True, exist_ok=True)
-    with output_file.open("wb+") as file:
-        file.write(download_response.content)
+        # Ensure the directory exists and write the file content
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+        with output_file.open("wb+") as file:
+            file.write(download_response.content)
+    except Exception as e:
+        print(f"An error occurred while downloading logs: {e}")
 
 def log_profit_loss(output_file: Path) -> None:
     lines = output_file.read_text(encoding="utf-8").splitlines()
