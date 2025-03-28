@@ -3,10 +3,10 @@ from argparse import ArgumentParser
 from datetime import datetime
 from importlib import metadata
 from pathlib import Path
-from prosperity2submit.core import submit
+from prosperity3submit.core import submit
 
 def main() -> int:
-    parser = ArgumentParser(prog="prosperity2submit", description="Submit an algorithm.")
+    parser = ArgumentParser(prog="prosperity3submit", description="Submit an algorithm.")
     parser.add_argument("algorithm", type=str, help="path to the Python file containing the algorithm to submit")
     parser.add_argument("--out", type=str, help="path to save submission logs to (defaults to submissions/<timestamp>.log)")
     parser.add_argument("--no-logs", action="store_true", help="don't download logs when done")
