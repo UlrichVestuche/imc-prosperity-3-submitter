@@ -50,7 +50,7 @@ def request_with_token(method: str, url: str, form_data: Optional[dict[str, Any]
 
     response = requests.request(method, url, data=data, headers=headers)
 
-    if response.status_code == 403:
+    if response.status_code == 401:
         refresh_token()
         return request_with_token(method, url, form_data)
 
